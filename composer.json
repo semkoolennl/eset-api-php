@@ -2,6 +2,7 @@
     "name": "semkoolen/eset-api-php",
     "description": "Eset API client library for PHP.",
     "type": "library",
+    "license": "GPL-2.0-or-late",       
     "require": {
         "php": ">=5.7",
         "ext-curl": "*",
