@@ -27,7 +27,7 @@ class LicenseStatusEndpoint extends EndpointAbstract
      * @return BaseResource
      * @throws ApiException
      */
-    public function get(string|null $licenseId, string|null $licenseKey)
+    public function get($licenseId, $licenseKey)
     {
         if (empty($licenseId) && empty($licenseKey))
         {

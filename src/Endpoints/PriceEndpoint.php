@@ -21,13 +21,6 @@ class PriceEndpoint extends EndpointAbstract
         return new Price($this->client);
     }
 
-    /**
-     * @return PriceRequest
-     */
-    protected function getRequestObject()
-    {
-        return new PriceRequest($this->client);
-    }
 
 
     /**
@@ -41,13 +34,13 @@ class PriceEndpoint extends EndpointAbstract
      */
     public function get(array $requestArray)
     {
-        echo "<br/>Price request array:<br/>";
-        var_dump($requestArray);
-        echo "<br/>";
+//        echo "<br/>Price request array:<br/>";
+//        var_dump($requestArray);
+//        echo "<br/>";
         $requestBody = array_filter($requestArray);
-        echo "<br/>Price request body:<br/>";
-        var_dump($requestBody);
-        echo "<br/>";
+//        echo "<br/>Price request body:<br/>";
+//        var_dump($requestBody);
+//        echo "<br/>";
 
         $data = parent::post($requestBody);
 
