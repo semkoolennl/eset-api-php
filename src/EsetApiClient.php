@@ -226,12 +226,6 @@ class EsetApiClient
 
         $response = $this->httpClient->post($url, $headers, $httpBody);
 
-        echo "<br/>HEADERS<br/>";
-        var_dump($headers);
-        echo "<br/><br/>BODY<br/>";
-        var_dump($httpBody);
-        echo "<br/>";
-
         return $this->parseResponseBody($response);
     }
 

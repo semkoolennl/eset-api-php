@@ -69,7 +69,6 @@ class Renewal extends BaseResource
         if (empty($this->OrderID)) {
             return null;
         }
-        echo "<br/>Searching for order: {$this->OrderID}<br/>";
         try {
             $orderDetails = $this->client->orderDetails->get($this->OrderID);
             $licenses = [];

@@ -221,12 +221,13 @@ class License extends BaseResource
 
     private function getPeriodByYears(int $years)
     {
-        return match ($years) {
-            1 => 1,
-            2 => 2,
-            3 => 5,
-            default => 6
-        };
+        switch ($years) {
+            case 1: $period = 1; break;
+            case 2: $period = 2; break;
+            case 3: $period = 5; break;
+            default: $period = 6; break;
+        }
+        return $period;
     }
 
 

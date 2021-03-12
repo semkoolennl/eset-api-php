@@ -32,7 +32,7 @@ class Response
     /**
      * @return bool
      */
-    public function getResult(): mixed
+    public function getResult()
     {
         return $this->result;
     }
@@ -40,7 +40,7 @@ class Response
     /**
      * @param bool $result
      */
-    public function setResult(mixed $result): void
+    public function setResult($result)
     {
         $this->result = $result;
     }
@@ -48,7 +48,7 @@ class Response
     /**
      * @return array
      */
-    public function getMessages(): mixed
+    public function getMessages()
     {
         return $this->messages;
     }
@@ -56,7 +56,7 @@ class Response
     /**
      * @param array $messages
      */
-    public function setMessages(mixed $messages): void
+    public function setMessages($messages)
     {
         $this->messages = $messages;
     }
