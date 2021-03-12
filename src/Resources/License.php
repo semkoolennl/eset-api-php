@@ -206,7 +206,7 @@ class License extends BaseResource
         ]);
     }
 
-    public function getRenewPrice(int $years, float $taxRate = null)
+    public function getRenewPrice(int $years = null, float $taxRate = null)
     {
         return $this->client->price->get([
             "LicenseKey" => $this->LicenseKey,
@@ -219,7 +219,27 @@ class License extends BaseResource
         ]);
     }
 
-    private function getPeriodByYears(int $years)
+    public function getExtendPrices()
+    {
+        $prices = [];
+        for ($period = 1; $period < 4; $period++)
+        {
+            $priceobject = $this->client->price->get([
+                "LicenseKey" => $this->LicenseKey,
+                "LicenseId" => $this->LicenseId,
+                "NewProductCode" => $this->ProductCode,
+                "NewQuantity" => $this->Quantity,
+                "Period" => $period,
+                "TaxRate" => null,
+                "DicountCode" => $this->DiscountCode
+            ]);
+            $prices[] = get_object_vars($priceobject);
+        }
+
+        return $prices;
+    }
+
+    private function getPeriodByYears(int $years = null)
     {
         switch ($years) {
             case 1: $period = 1; break;
