@@ -214,7 +214,7 @@ class License extends BaseResource
             "NewProductCode" => $this->ProductCode,
             "NewQuantity" => $this->Quantity,
             "Period" => $this->getPeriodByYears($years),
-            "TaxRate" => $taxRate,
+            "TaxRate" => 1.21,
             "DicountCode" => $this->DiscountCode
         ]);
     }
@@ -230,7 +230,7 @@ class License extends BaseResource
                 "NewProductCode" => $this->ProductCode,
                 "NewQuantity" => $this->Quantity,
                 "Period" => $period,
-                "TaxRate" => null,
+                "TaxRate" => 1.21,
                 "DicountCode" => $this->DiscountCode
             ]);
             $prices[] = get_object_vars($priceobject);
